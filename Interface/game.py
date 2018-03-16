@@ -55,6 +55,8 @@ def lap_tracker(lap):
         image = pygame.image.load("..\Resources\Laps\lap_9.png")
     elif lap == 10:
         image = pygame.image.load("..\Resources\Laps\lap_10.png")
+    else:
+        image = pygame.image.load("..\Resources\Laps\lap_1.png")
 
     image = pygame.transform.scale(image, (50, 50))
     return image
@@ -126,22 +128,18 @@ while not raceFinished:
     if player_x > display_width:
         player_x = -80
         player_laps += 1
-        print("Orange is on lap " + (str(player_laps)))
 
     if comp_1_x > display_width:
         comp_1_x = -80
         comp_1_laps += 1
-        print("Black is on lap " + (str(comp_1_laps)))
 
     if comp_2_x > display_width:
         comp_2_x = -80
         comp_2_laps += 1
-        print("Red is on lap " + (str(comp_2_laps)))
 
     if comp_3_x > display_width:
         comp_3_x = -80
         comp_3_laps += 1
-        print("White is on " + (str(comp_1_laps)))
 
 pygame.quit()
 quit
