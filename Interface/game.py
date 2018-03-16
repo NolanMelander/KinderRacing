@@ -17,6 +17,7 @@ black = (0, 0, 0)
 clock = pygame.time.Clock()
 raceFinished = False
 
+background = pygame.image.load("..\Resources\Track\\TrackTest.png")
 
 # CAR FUNCTIONS
 def player_car(x, y):
@@ -37,10 +38,10 @@ def computer_three_car(x, y):
 
 # CARS SETUP
 player_x = comp_1_x = comp_2_x = comp_3_x = 0
-player_y = 100
-comp_1_y = 200
-comp_2_y = 300
-comp_3_y = 400
+player_y = 150
+comp_1_y = 250
+comp_2_y = 350
+comp_3_y = 450
 player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
 
 
@@ -73,7 +74,8 @@ while not raceFinished:
     comp_3_x += comp_3_change
 
     # PREPARE DISPLAY
-    gameDisplay.fill(black)
+    gameDisplay.blit(background, (0, 95, display_width, display_height))
+    #gameDisplay.fill(black)
     player_car(player_x, player_y)
     computer_one_car(comp_1_x, comp_1_y)
     computer_two_car(comp_2_x, comp_2_y)
