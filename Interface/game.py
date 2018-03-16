@@ -10,11 +10,11 @@ display_width, display_height = 800, 800
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Kinder Racing')
 
-
 clock = pygame.time.Clock()
 raceFinished = False
 
 background = pygame.image.load("..\Resources\Track\\TrackTest.png")
+
 
 # CAR FUNCTIONS
 def player_car(x, y):
@@ -88,7 +88,6 @@ comp_2_y = 350
 comp_3_y = 450
 player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
 
-
 # TRACK LAPS
 player_laps = 1
 comp_1_laps = 1
@@ -98,6 +97,7 @@ comp_3_laps = 1
 # QUESTION SETUP
 option_1, option_2, option_3, option_4, answer = questions.new_question()
 
+correct = False
 
 while not raceFinished:
     for event in pygame.event.get():
@@ -122,6 +122,7 @@ while not raceFinished:
     comp_3_x += comp_3_change
 
     # PREPARE DISPLAY
+
     gameDisplay.blit(background, (0, 95, display_width, display_height))
     player_lapImg = lap_tracker(player_laps)
     comp_1_lapImg = lap_tracker(comp_1_laps)
@@ -136,22 +137,31 @@ while not raceFinished:
     pygame.display.update()
     clock.tick(60)
 
+
+    if correct:
+        option_1, option_2, option_3, option_4, answer = questions.new_question()
+        correct = False
+
     # REPOSITION CARS IF NEEDED
     if player_x > display_width:
         player_x = -80
         player_laps += 1
+        correct = True
 
     if comp_1_x > display_width:
         comp_1_x = -80
         comp_1_laps += 1
+        correct = True
 
     if comp_2_x > display_width:
         comp_2_x = -80
         comp_2_laps += 1
+        correct = True
 
     if comp_3_x > display_width:
         comp_3_x = -80
         comp_3_laps += 1
+        correct = True
 
 pygame.quit()
 quit
