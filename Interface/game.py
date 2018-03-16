@@ -1,7 +1,6 @@
 import pygame
 import Interface.cars as cars
-import Interface.track as track
-
+import Interface.questions as questions
 from random import randint
 
 pygame.init()
@@ -73,6 +72,14 @@ def display_lap(pc, comp_1, comp_2, comp_3):
     computer_three_car(575, 0)
     pass
 
+
+def question_display(choice_1, choice_2, choice_3, choice_4):
+    gameDisplay.blit(choice_1, (245, 625))
+    gameDisplay.blit(choice_2, (380, 625))
+    gameDisplay.blit(choice_3, (515, 625))
+    gameDisplay.blit(choice_4, (650, 625))
+
+
 # CARS SETUP
 player_x = comp_1_x = comp_2_x = comp_3_x = 0
 player_y = 150
@@ -87,6 +94,10 @@ player_laps = 1
 comp_1_laps = 1
 comp_2_laps = 1
 comp_3_laps = 1
+
+# QUESTION SETUP
+option_1, option_2, option_3, option_4, answer = questions.new_question()
+
 
 while not raceFinished:
     for event in pygame.event.get():
@@ -117,6 +128,7 @@ while not raceFinished:
     comp_2_lapImg = lap_tracker(comp_2_laps)
     comp_3_lapImg = lap_tracker(comp_3_laps)
     display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg)
+    question_display(option_1, option_2, option_3, option_4)
     player_car(player_x, player_y)
     computer_one_car(comp_1_x, comp_1_y)
     computer_two_car(comp_2_x, comp_2_y)
