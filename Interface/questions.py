@@ -58,14 +58,14 @@ def new_question():
         return question_26()
 
 
-
 def question_1():
     option_1 = letters.set_letter_w()
     option_2 = letters.set_letter_a()
     option_3 = letters.set_letter_t()
     option_4 = letters.set_letter_p()
     answer = pygame.K_a
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\A.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_2():
@@ -74,8 +74,8 @@ def question_2():
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_g()
     answer = pygame.K_b
-    return option_1, option_2, option_3, option_4, answer
-
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\B.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 def question_3():
     option_1 = letters.set_letter_o()
@@ -83,8 +83,8 @@ def question_3():
     option_3 = letters.set_letter_c()
     option_4 = letters.set_letter_x()
     answer = pygame.K_c
-    return option_1, option_2, option_3, option_4, answer
-
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\C.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 def question_4():
     option_1 = letters.set_letter_t()
@@ -92,8 +92,8 @@ def question_4():
     option_3 = letters.set_letter_d()
     option_4 = letters.set_letter_c()
     answer = pygame.K_d
-    return option_1, option_2, option_3, option_4, answer
-
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\D.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 def question_5():
     option_1 = letters.set_letter_e()
@@ -101,7 +101,8 @@ def question_5():
     option_3 = letters.set_letter_f()
     option_4 = letters.set_letter_b()
     answer = pygame.K_e
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\E.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_6():
@@ -110,7 +111,8 @@ def question_6():
     option_3 = letters.set_letter_a()
     option_4 = letters.set_letter_f()
     answer = pygame.K_f
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\F.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_7():
@@ -119,7 +121,8 @@ def question_7():
     option_3 = letters.set_letter_n()
     option_4 = letters.set_letter_o()
     answer = pygame.K_g
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\G.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_8():
@@ -128,7 +131,8 @@ def question_8():
     option_3 = letters.set_letter_h()
     option_4 = letters.set_letter_a()
     answer = pygame.K_h
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\H.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_9():
@@ -137,7 +141,8 @@ def question_9():
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_t()
     answer = pygame.K_i
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\I.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_10():
@@ -146,7 +151,8 @@ def question_10():
     option_3 = letters.set_letter_g()
     option_4 = letters.set_letter_q()
     answer = pygame.K_j
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\J.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_11():
@@ -155,7 +161,8 @@ def question_11():
     option_3 = letters.set_letter_j()
     option_4 = letters.set_letter_c()
     answer = pygame.K_k
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\K.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_12():
@@ -164,7 +171,8 @@ def question_12():
     option_3 = letters.set_letter_p()
     option_4 = letters.set_letter_i()
     answer = pygame.K_l
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\L.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_13():
@@ -173,7 +181,8 @@ def question_13():
     option_3 = letters.set_letter_c()
     option_4 = letters.set_letter_m()
     answer = pygame.K_m
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\M.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_14():
@@ -182,7 +191,8 @@ def question_14():
     option_3 = letters.set_letter_n()
     option_4 = letters.set_letter_x()
     answer = pygame.K_n
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\\N.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_15():
@@ -191,7 +201,8 @@ def question_15():
     option_3 = letters.set_letter_n()
     option_4 = letters.set_letter_y()
     answer = pygame.K_o
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\O.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_16():
@@ -200,7 +211,8 @@ def question_16():
     option_3 = letters.set_letter_t()
     option_4 = letters.set_letter_s()
     answer = pygame.K_p
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\P.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_17():
@@ -209,7 +221,8 @@ def question_17():
     option_3 = letters.set_letter_m()
     option_4 = letters.set_letter_b()
     answer = pygame.K_q
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\Q.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_18():
@@ -218,7 +231,8 @@ def question_18():
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_r()
     answer = pygame.K_r
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\R.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_19():
@@ -227,7 +241,8 @@ def question_19():
     option_3 = letters.set_letter_s()
     option_4 = letters.set_letter_k()
     answer = pygame.K_s
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\S.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_20():
@@ -236,7 +251,8 @@ def question_20():
     option_3 = letters.set_letter_m()
     option_4 = letters.set_letter_t()
     answer = pygame.K_t
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\T.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_21():
@@ -245,7 +261,8 @@ def question_21():
     option_3 = letters.set_letter_u()
     option_4 = letters.set_letter_y()
     answer = pygame.K_u
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\\U.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_22():
@@ -254,7 +271,8 @@ def question_22():
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_v()
     answer = pygame.K_v
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\V.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_23():
@@ -263,7 +281,8 @@ def question_23():
     option_3 = letters.set_letter_d()
     option_4 = letters.set_letter_c()
     answer = pygame.K_w
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\W.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_24():
@@ -272,7 +291,8 @@ def question_24():
     option_3 = letters.set_letter_h()
     option_4 = letters.set_letter_i()
     answer = pygame.K_x
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\X.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_25():
@@ -281,7 +301,8 @@ def question_25():
     option_3 = letters.set_letter_a()
     option_4 = letters.set_letter_t()
     answer = pygame.K_y
-    return option_1, option_2, option_3, option_4, answer
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\Y.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 
 
 def question_26():
@@ -290,6 +311,6 @@ def question_26():
     option_3 = letters.set_letter_v()
     option_4 = letters.set_letter_k()
     answer = pygame.K_z
-    return option_1, option_2, option_3, option_4, answer
-
+    sound = pygame.mixer.Sound("..\Resources\Sounds\Letters\Z.ogg")
+    return option_1, option_2, option_3, option_4, answer, sound
 

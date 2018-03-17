@@ -108,7 +108,7 @@ comp_2_laps = 1
 comp_3_laps = 1
 
 # QUESTION SETUP
-option_1, option_2, option_3, option_4, answer = questions.new_question()
+option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
 
 correct = False
 
@@ -152,6 +152,8 @@ while not raceFinished:
     computer_one_car(comp_1_x, comp_1_y)
     computer_two_car(comp_2_x, comp_2_y)
     computer_three_car(comp_3_x, comp_3_y)
+    play = pygame.image.load("..\Resources\Misc\play.png")
+    gameDisplay.blit(play, (100, 675))
     pygame.display.update()
     clock.tick(60)
 
