@@ -121,17 +121,19 @@ while not raceFinished:
     if event.type == pygame.KEYDOWN:
         #if event.key == pygame.K_SPACE:
         if event.key == answer:
-            player_x_change = randint(1, 10)
-            comp_1_change = randint(1, 10)
-            comp_2_change = randint(1, 10)
-            comp_3_change = randint(1, 10)
+            player_x_change = randint(1, 20)
+            comp_1_change = randint(1, 20)
+            comp_2_change = randint(1, 20)
+            comp_3_change = randint(1, 20)
+
+        if event.key == pygame.K_LSHIFT:
+            sound.play()
 
     if event.type == pygame.KEYUP:
         #if event.key == pygame.K_SPACE:
         if event.key == answer:
             player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
             correct = True
-
 
     # ADJUST CAR POSITIONS
     player_x += player_x_change
@@ -159,7 +161,8 @@ while not raceFinished:
 
 
     if correct:
-        option_1, option_2, option_3, option_4, answer = questions.new_question()
+        option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+        sound.play()
         correct = False
 
     # REPOSITION CARS IF NEEDED
