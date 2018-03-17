@@ -99,21 +99,26 @@ option_1, option_2, option_3, option_4, answer = questions.new_question()
 
 correct = False
 
+key = pygame.KEYUP
 while not raceFinished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             raceFinished = True
 
     if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_SPACE:
+        #if event.key == pygame.K_SPACE:
+        if event.key == answer:
             player_x_change = randint(1, 10)
             comp_1_change = randint(1, 10)
             comp_2_change = randint(1, 10)
             comp_3_change = randint(1, 10)
 
     if event.type == pygame.KEYUP:
-        if event.key == pygame.K_SPACE:
+        #if event.key == pygame.K_SPACE:
+        if event.key == answer:
             player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
+            correct = True
+
 
     # ADJUST CAR POSITIONS
     player_x += player_x_change
@@ -146,22 +151,19 @@ while not raceFinished:
     if player_x > display_width:
         player_x = -80
         player_laps += 1
-        correct = True
 
     if comp_1_x > display_width:
         comp_1_x = -80
         comp_1_laps += 1
-        correct = True
 
     if comp_2_x > display_width:
         comp_2_x = -80
         comp_2_laps += 1
-        correct = True
 
     if comp_3_x > display_width:
         comp_3_x = -80
         comp_3_laps += 1
-        correct = True
+
 
 pygame.quit()
 quit

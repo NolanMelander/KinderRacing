@@ -1,8 +1,9 @@
+import pygame
 import Interface.letters as letters
 from random import randint
 
 def new_question():
-    question = randint(1, 27)
+    question = randint(1, 26)
     if question == 1:
         return question_1()
     elif question == 2:
@@ -55,8 +56,6 @@ def new_question():
         return question_25()
     elif question == 26:
         return question_26()
-    elif question == 27:
-        return question_27()
 
 
 
@@ -65,7 +64,7 @@ def question_1():
     option_2 = letters.set_letter_a()
     option_3 = letters.set_letter_t()
     option_4 = letters.set_letter_p()
-    answer = letters.set_letter_a()
+    answer = pygame.K_a
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -74,7 +73,7 @@ def question_2():
     option_2 = letters.set_letter_r()
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_g()
-    answer = letters.set_letter_b()
+    answer = pygame.K_b
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -83,7 +82,7 @@ def question_3():
     option_2 = letters.set_letter_m()
     option_3 = letters.set_letter_c()
     option_4 = letters.set_letter_x()
-    answer = letters.set_letter_c()
+    answer = pygame.K_c
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -92,7 +91,7 @@ def question_4():
     option_2 = letters.set_letter_k()
     option_3 = letters.set_letter_d()
     option_4 = letters.set_letter_c()
-    answer = letters.set_letter_d()
+    answer = pygame.K_d
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -101,7 +100,7 @@ def question_5():
     option_2 = letters.set_letter_d()
     option_3 = letters.set_letter_f()
     option_4 = letters.set_letter_b()
-    answer = letters.set_letter_e()
+    answer = pygame.K_e
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -110,7 +109,7 @@ def question_6():
     option_2 = letters.set_letter_i()
     option_3 = letters.set_letter_a()
     option_4 = letters.set_letter_f()
-    answer = letters.set_letter_f()
+    answer = pygame.K_f
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -119,7 +118,7 @@ def question_7():
     option_2 = letters.set_letter_g()
     option_3 = letters.set_letter_n()
     option_4 = letters.set_letter_o()
-    answer = letters.set_letter_g()
+    answer = pygame.K_g
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -128,7 +127,7 @@ def question_8():
     option_2 = letters.set_letter_x()
     option_3 = letters.set_letter_h()
     option_4 = letters.set_letter_a()
-    answer = letters.set_letter_h()
+    answer = pygame.K_h
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -137,7 +136,7 @@ def question_9():
     option_2 = letters.set_letter_f()
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_t()
-    answer = letters.set_letter_i()
+    answer = pygame.K_i
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -146,7 +145,7 @@ def question_10():
     option_2 = letters.set_letter_y()
     option_3 = letters.set_letter_g()
     option_4 = letters.set_letter_q()
-    answer = letters.set_letter_j()
+    answer = pygame.K_j
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -155,7 +154,7 @@ def question_11():
     option_2 = letters.set_letter_k()
     option_3 = letters.set_letter_j()
     option_4 = letters.set_letter_c()
-    answer = letters.set_letter_k()
+    answer = pygame.K_k
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -164,7 +163,7 @@ def question_12():
     option_2 = letters.set_letter_v()
     option_3 = letters.set_letter_p()
     option_4 = letters.set_letter_i()
-    answer = letters.set_letter_l()
+    answer = pygame.K_l
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -173,7 +172,7 @@ def question_13():
     option_2 = letters.set_letter_b()
     option_3 = letters.set_letter_c()
     option_4 = letters.set_letter_m()
-    answer = letters.set_letter_m()
+    answer = pygame.K_m
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -182,7 +181,7 @@ def question_14():
     option_2 = letters.set_letter_g()
     option_3 = letters.set_letter_n()
     option_4 = letters.set_letter_x()
-    answer = letters.set_letter_n()
+    answer = pygame.K_n
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -191,7 +190,7 @@ def question_15():
     option_2 = letters.set_letter_u()
     option_3 = letters.set_letter_n()
     option_4 = letters.set_letter_y()
-    answer = letters.set_letter_o()
+    answer = pygame.K_o
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -200,7 +199,7 @@ def question_16():
     option_2 = letters.set_letter_j()
     option_3 = letters.set_letter_t()
     option_4 = letters.set_letter_s()
-    answer = letters.set_letter_p()
+    answer = pygame.K_p
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -209,7 +208,7 @@ def question_17():
     option_2 = letters.set_letter_q()
     option_3 = letters.set_letter_m()
     option_4 = letters.set_letter_b()
-    answer = letters.set_letter_q()
+    answer = pygame.K_q
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -218,7 +217,7 @@ def question_18():
     option_2 = letters.set_letter_a()
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_r()
-    answer = letters.set_letter_r()
+    answer = pygame.K_r
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -227,7 +226,7 @@ def question_19():
     option_2 = letters.set_letter_g()
     option_3 = letters.set_letter_s()
     option_4 = letters.set_letter_k()
-    answer = letters.set_letter_s()
+    answer = pygame.K_s
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -236,7 +235,7 @@ def question_20():
     option_2 = letters.set_letter_r()
     option_3 = letters.set_letter_m()
     option_4 = letters.set_letter_t()
-    answer = letters.set_letter_t()
+    answer = pygame.K_t
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -245,7 +244,7 @@ def question_21():
     option_2 = letters.set_letter_c()
     option_3 = letters.set_letter_u()
     option_4 = letters.set_letter_y()
-    answer = letters.set_letter_u()
+    answer = pygame.K_u
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -254,7 +253,7 @@ def question_22():
     option_2 = letters.set_letter_w()
     option_3 = letters.set_letter_q()
     option_4 = letters.set_letter_v()
-    answer = letters.set_letter_v()
+    answer = pygame.K_v
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -263,7 +262,7 @@ def question_23():
     option_2 = letters.set_letter_v()
     option_3 = letters.set_letter_d()
     option_4 = letters.set_letter_c()
-    answer = letters.set_letter_w()
+    answer = pygame.K_w
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -272,7 +271,7 @@ def question_24():
     option_2 = letters.set_letter_t()
     option_3 = letters.set_letter_h()
     option_4 = letters.set_letter_i()
-    answer = letters.set_letter_x()
+    answer = pygame.K_x
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -281,7 +280,7 @@ def question_25():
     option_2 = letters.set_letter_w()
     option_3 = letters.set_letter_a()
     option_4 = letters.set_letter_t()
-    answer = letters.set_letter_y()
+    answer = pygame.K_y
     return option_1, option_2, option_3, option_4, answer
 
 
@@ -290,16 +289,7 @@ def question_26():
     option_2 = letters.set_letter_z()
     option_3 = letters.set_letter_v()
     option_4 = letters.set_letter_k()
-    answer = letters.set_letter_z()
-    return option_1, option_2, option_3, option_4, answer
-
-
-def question_27():
-    option_1 = letters.set_letter_w()
-    option_2 = letters.set_letter_a()
-    option_3 = letters.set_letter_t()
-    option_4 = letters.set_letter_p()
-    answer = letters.set_letter_a()
+    answer = pygame.K_z
     return option_1, option_2, option_3, option_4, answer
 
 
