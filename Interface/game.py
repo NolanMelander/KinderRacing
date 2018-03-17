@@ -12,7 +12,7 @@ pygame.display.set_caption('Kinder Racing')
 pygame.display.set_icon(cars.player)
 clock = pygame.time.Clock()
 raceFinished = False
-
+engine = pygame.mixer.Sound("..\Resources\Sounds\misc\engine.ogg")
 background = pygame.image.load("..\Resources\Track\\TrackTest.png")
 
 
@@ -109,10 +109,10 @@ comp_3_laps = 1
 
 # QUESTION SETUP
 option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
-
+sound.play()
 correct = False
 
-key = pygame.KEYUP
+
 while not raceFinished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -162,6 +162,7 @@ while not raceFinished:
 
     if correct:
         option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+        engine.play(maxtime=3000)
         sound.play()
         correct = False
 
