@@ -3,132 +3,106 @@ import pygame
 
 # LETTERS
 def set_letter_a():
-    letter_a = pygame.image.load("..\Resources\Letters\A.png")
-    return letter_a
+    return pygame.image.load("..\Resources\Letters\A.png")
 
 
 def set_letter_b():
-    letter_b = pygame.image.load("..\Resources\Letters\B.png")
-    return letter_b
+    return pygame.image.load("..\Resources\Letters\B.png")
 
 
 def set_letter_c():
-    letter_c = pygame.image.load("..\Resources\Letters\C.png")
-    return letter_c
+    return pygame.image.load("..\Resources\Letters\C.png")
 
 
 def set_letter_d():
-    letter_d = pygame.image.load("..\Resources\Letters\D.png")
-    return letter_d
+    return pygame.image.load("..\Resources\Letters\D.png")
 
 
 def set_letter_e():
-    letter_e = pygame.image.load("..\Resources\Letters\E.png")
-    return letter_e
+    return pygame.image.load("..\Resources\Letters\E.png")
 
 
 def set_letter_f():
-    letter_f = pygame.image.load("..\Resources\Letters\F.png")
-    return letter_f
+    return pygame.image.load("..\Resources\Letters\F.png")
 
 
 def set_letter_g():
-    letter_g = pygame.image.load("..\Resources\Letters\G.png")
-    return letter_g
+    return pygame.image.load("..\Resources\Letters\G.png")
 
 
 def set_letter_h():
-    letter_h = pygame.image.load("..\Resources\Letters\H.png")
-    return letter_h
+    return pygame.image.load("..\Resources\Letters\H.png")
 
 
 def set_letter_i():
-    letter_i = pygame.image.load("..\Resources\Letters\I.png")
-    return letter_i
+    return pygame.image.load("..\Resources\Letters\I.png")
 
 
 def set_letter_j():
-    letter_j = pygame.image.load("..\Resources\Letters\J.png")
-    return letter_j
+    return pygame.image.load("..\Resources\Letters\J.png")
 
 
 def set_letter_k():
-    letter_k = pygame.image.load("..\Resources\Letters\K.png")
-    return letter_k
+    return pygame.image.load("..\Resources\Letters\K.png")
 
 
 def set_letter_l():
-    letter_l = pygame.image.load("..\Resources\Letters\L.png")
-    return letter_l
+    return pygame.image.load("..\Resources\Letters\L.png")
 
 
 def set_letter_m():
-    letter_m = pygame.image.load("..\Resources\Letters\M.png")
-    return letter_m
+    return pygame.image.load("..\Resources\Letters\M.png")
 
 
 def set_letter_n():
-    letter_n = pygame.image.load("..\Resources\Letters\\N.png")
-    return letter_n
+    return pygame.image.load("..\Resources\Letters\\N.png")
 
 
 def set_letter_o():
-    letter_o = pygame.image.load("..\Resources\Letters\O.png")
-    return letter_o
+    return pygame.image.load("..\Resources\Letters\O.png")
 
 
 def set_letter_p():
-    letter_p = pygame.image.load("..\Resources\Letters\P.png")
-    return letter_p
+    return pygame.image.load("..\Resources\Letters\P.png")
 
 
 def set_letter_q():
-    letter_q = pygame.image.load("..\Resources\Letters\Q.png")
-    return letter_q
+    return pygame.image.load("..\Resources\Letters\Q.png")
 
 
 def set_letter_r():
-    letter_r = pygame.image.load("..\Resources\Letters\R.png")
-    return letter_r
+    return pygame.image.load("..\Resources\Letters\R.png")
 
 
 def set_letter_s():
-    letter_s = pygame.image.load("..\Resources\Letters\S.png")
-    return letter_s
+    return pygame.image.load("..\Resources\Letters\S.png")
 
 
 def set_letter_t():
-    letter_t = pygame.image.load("..\Resources\Letters\T.png")
-    return letter_t
+    return pygame.image.load("..\Resources\Letters\T.png")
 
 
 def set_letter_u():
-    letter_u = pygame.image.load("..\Resources\Letters\\U.png")
-    return letter_u
+    return pygame.image.load("..\Resources\Letters\\U.png")
 
 
 def set_letter_v():
-    letter_v = pygame.image.load("..\Resources\Letters\V.png")
-    return letter_v
+    return pygame.image.load("..\Resources\Letters\V.png")
 
 
 def set_letter_w():
-    letter_w = pygame.image.load("..\Resources\Letters\W.png")
-    return letter_w
+    return pygame.image.load("..\Resources\Letters\W.png")
 
 
 def set_letter_x():
-    letter_x = pygame.image.load("..\Resources\Letters\X.png")
-    return letter_x
+    return pygame.image.load("..\Resources\Letters\X.png")
 
 
 def set_letter_y():
-    letter_y = pygame.image.load("..\Resources\Letters\Y.png")
-    return letter_y
+    return pygame.image.load("..\Resources\Letters\Y.png")
 
 
 def set_letter_z():
-    letter_z = pygame.image.load("..\Resources\Letters\Z.png")
-    return letter_z
+    return pygame.image.load("..\Resources\Letters\Z.png")
 
 
