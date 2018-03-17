@@ -9,7 +9,7 @@ pygame.init()
 display_width, display_height = 800, 800
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Kinder Racing')
-
+pygame.display.set_icon(cars.player)
 clock = pygame.time.Clock()
 raceFinished = False
 
@@ -61,15 +61,28 @@ def lap_tracker(lap):
     return image
 
 
-def display_lap(pc, comp_1, comp_2, comp_3):
+def sort_pos(p_pos, one_pos, two_pos, three_pos):
+    return 575, 375, 175, 0
+
+
+def display_lap(pc, comp_1, comp_2, comp_3, player_x, comp_one_x, comp_two_x, comp_three_x):
     gameDisplay.blit(pc, (115, 0))
     gameDisplay.blit(comp_1, (300, 0))
     gameDisplay.blit(comp_2, (500, 0))
     gameDisplay.blit(comp_3, (700, 0))
-    player_car(0, 0)
-    computer_one_car(175, 0)
-    computer_two_car(375, 0)
-    computer_three_car(575, 0)
+
+    player_pos = 575
+    comp_one_pos = 375
+    comp_two_pos = 175
+    comp_three_pos = 0
+
+    player_pos, comp_one_pos, comp_two_pos, comp_three_pos = sort_pos(player_x, comp_one_x, comp_two_x, comp_three_x)
+
+    # REPOSITION PLAYERS
+    player_car(player_pos, 0)
+    computer_one_car(comp_one_pos, 0)
+    computer_two_car(comp_two_pos, 0)
+    computer_three_car(comp_three_pos, 0)
     pass
 
 
@@ -133,7 +146,7 @@ while not raceFinished:
     comp_1_lapImg = lap_tracker(comp_1_laps)
     comp_2_lapImg = lap_tracker(comp_2_laps)
     comp_3_lapImg = lap_tracker(comp_3_laps)
-    display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg)
+    display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg, player_x, comp_1_x, comp_2_x, comp_3_x)
     question_display(option_1, option_2, option_3, option_4)
     player_car(player_x, player_y)
     computer_one_car(comp_1_x, comp_1_y)
