@@ -11,7 +11,6 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Kinder Racing')
 pygame.display.set_icon(cars.player)
 clock = pygame.time.Clock()
-raceFinished = False
 engine = pygame.mixer.Sound("..\Resources\Sounds\misc\engine.ogg")
 background = pygame.image.load("..\Resources\Track\\TrackTest.png")
 
@@ -93,96 +92,99 @@ def question_display(choice_1, choice_2, choice_3, choice_4):
     gameDisplay.blit(choice_4, (650, 625))
 
 
-# CARS SETUP
-player_x = comp_1_x = comp_2_x = comp_3_x = 0
-player_y = 150
-comp_1_y = 250
-comp_2_y = 350
-comp_3_y = 450
-player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
+def game_start():
 
-# TRACK LAPS
-player_laps = 1
-comp_1_laps = 1
-comp_2_laps = 1
-comp_3_laps = 1
+    # CARS SETUP
+    player_x = comp_1_x = comp_2_x = comp_3_x = 0
+    player_y = 150
+    comp_1_y = 250
+    comp_2_y = 350
+    comp_3_y = 450
+    player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
 
-# QUESTION SETUP
-option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
-sound.play()
-correct = False
+    # TRACK LAPS
+    player_laps = 1
+    comp_1_laps = 1
+    comp_2_laps = 1
+    comp_3_laps = 1
+
+    # QUESTION SETUP
+    option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+    sound.play()
+    correct = False
+    raceFinished = False
+
+    while not raceFinished:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                raceFinished = True
+
+        if event.type == pygame.KEYDOWN:
+            #if event.key == pygame.K_SPACE:
+            if event.key == answer:
+                player_x_change = randint(1, 20)
+                comp_1_change = randint(1, 20)
+                comp_2_change = randint(1, 20)
+                comp_3_change = randint(1, 20)
+
+            if event.key == pygame.K_LSHIFT:
+                sound.play()
+
+        if event.type == pygame.KEYUP:
+            #if event.key == pygame.K_SPACE:
+            if event.key == answer:
+                player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
+                correct = True
+
+        # ADJUST CAR POSITIONS
+        player_x += player_x_change
+        comp_1_x += comp_1_change
+        comp_2_x += comp_2_change
+        comp_3_x += comp_3_change
+
+        # PREPARE DISPLAY
+
+        gameDisplay.blit(background, (0, 95, display_width, display_height))
+        player_lapImg = lap_tracker(player_laps)
+        comp_1_lapImg = lap_tracker(comp_1_laps)
+        comp_2_lapImg = lap_tracker(comp_2_laps)
+        comp_3_lapImg = lap_tracker(comp_3_laps)
+        display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg, player_x, comp_1_x, comp_2_x, comp_3_x)
+        question_display(option_1, option_2, option_3, option_4)
+        player_car(player_x, player_y)
+        computer_one_car(comp_1_x, comp_1_y)
+        computer_two_car(comp_2_x, comp_2_y)
+        computer_three_car(comp_3_x, comp_3_y)
+        play = pygame.image.load("..\Resources\Misc\play.png")
+        gameDisplay.blit(play, (100, 675))
+        pygame.display.update()
+        clock.tick(60)
 
 
-while not raceFinished:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            raceFinished = True
-
-    if event.type == pygame.KEYDOWN:
-        #if event.key == pygame.K_SPACE:
-        if event.key == answer:
-            player_x_change = randint(1, 20)
-            comp_1_change = randint(1, 20)
-            comp_2_change = randint(1, 20)
-            comp_3_change = randint(1, 20)
-
-        if event.key == pygame.K_LSHIFT:
+        if correct:
+            option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+            engine.play(maxtime=3000)
             sound.play()
+            correct = False
 
-    if event.type == pygame.KEYUP:
-        #if event.key == pygame.K_SPACE:
-        if event.key == answer:
-            player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
-            correct = True
+        # REPOSITION CARS IF NEEDED
+        if player_x > display_width:
+            player_x = -80
+            player_laps += 1
 
-    # ADJUST CAR POSITIONS
-    player_x += player_x_change
-    comp_1_x += comp_1_change
-    comp_2_x += comp_2_change
-    comp_3_x += comp_3_change
+        if comp_1_x > display_width:
+            comp_1_x = -80
+            comp_1_laps += 1
 
-    # PREPARE DISPLAY
+        if comp_2_x > display_width:
+            comp_2_x = -80
+            comp_2_laps += 1
 
-    gameDisplay.blit(background, (0, 95, display_width, display_height))
-    player_lapImg = lap_tracker(player_laps)
-    comp_1_lapImg = lap_tracker(comp_1_laps)
-    comp_2_lapImg = lap_tracker(comp_2_laps)
-    comp_3_lapImg = lap_tracker(comp_3_laps)
-    display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg, player_x, comp_1_x, comp_2_x, comp_3_x)
-    question_display(option_1, option_2, option_3, option_4)
-    player_car(player_x, player_y)
-    computer_one_car(comp_1_x, comp_1_y)
-    computer_two_car(comp_2_x, comp_2_y)
-    computer_three_car(comp_3_x, comp_3_y)
-    play = pygame.image.load("..\Resources\Misc\play.png")
-    gameDisplay.blit(play, (100, 675))
-    pygame.display.update()
-    clock.tick(60)
+        if comp_3_x > display_width:
+            comp_3_x = -80
+            comp_3_laps += 1
 
 
-    if correct:
-        option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
-        engine.play(maxtime=3000)
-        sound.play()
-        correct = False
-
-    # REPOSITION CARS IF NEEDED
-    if player_x > display_width:
-        player_x = -80
-        player_laps += 1
-
-    if comp_1_x > display_width:
-        comp_1_x = -80
-        comp_1_laps += 1
-
-    if comp_2_x > display_width:
-        comp_2_x = -80
-        comp_2_laps += 1
-
-    if comp_3_x > display_width:
-        comp_3_x = -80
-        comp_3_laps += 1
-
-
+game_start()
 pygame.quit()
 quit
