@@ -184,7 +184,28 @@ def game_start():
             comp_3_x = -80
             comp_3_laps += 1
 
+def text_objects(text, font):
+    textSurface = font.render(text, True, (255, 255, 255))
+    return textSurface, textSurface.get_rect()
 
-game_start()
-pygame.quit()
-quit
+def game_menu():
+
+    intro = True
+    black = (0, 0, 0)
+    while intro:
+        for event in pygame.event.get():
+            print(event)
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        gameDisplay.fill(black)
+        largeText = pygame.font.Font('freesansbold.ttf', 115)
+        TextSurf, TextRect = text_objects("Kinder Racing", largeText)
+        gameDisplay.blit(TextSurf, TextRect)
+        pygame.display.update()
+        clock.tick(15)
+
+
+game_menu()
+
