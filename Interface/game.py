@@ -191,18 +191,45 @@ def text_objects(text, font):
 def game_menu():
 
     intro = True
-    black = (0, 0, 0)
+
     while intro:
-        for event in pygame.event.get():
-            print(event)
-            if event.type == pygame.QUIT:
+        for gameEvent in pygame.event.get():
+            if gameEvent.type == pygame.QUIT:
                 pygame.quit()
                 quit()
 
-        gameDisplay.fill(black)
+        gameDisplay.fill((0, 0, 0))
         largeText = pygame.font.Font('freesansbold.ttf', 115)
         TextSurf, TextRect = text_objects("Kinder Racing", largeText)
+        TextRect.center = ((display_width/2), (display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
+
+        mouse = pygame.mouse.get_pos()
+        clicked = pygame.mouse.get_pressed()
+
+        if 150+100 > mouse[0] > 150 and 450+50 > mouse[1] > 450:
+            pygame.draw.rect(gameDisplay, (0,255,0), (150, 450, 100, 50))
+            pygame.draw.rect(gameDisplay, (200, 0, 0), (550, 450, 100, 50))
+            if clicked[0] == 1:
+                    game_start()
+        elif 550+100 > mouse[0] > 550 and 450+50 > mouse[1] > 450:
+            pygame.draw.rect(gameDisplay, (250, 0, 0), (550, 450, 100, 50))
+            pygame.draw.rect(gameDisplay, (0, 200, 0), (150, 450, 100, 50))
+        else:
+            pygame.draw.rect(gameDisplay, (0, 200, 0), (150, 450, 100, 50))
+            pygame.draw.rect(gameDisplay, (200, 0, 0), (550, 450, 100, 50))
+
+
+        startText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects("Start", startText)
+        textRect.center = ((150+(100/2)), (450+(50/2)))
+        gameDisplay.blit(textSurf, textRect)
+
+        quitText = pygame.font.Font('freesansbold.ttf', 20)
+        textSurf, textRect = text_objects("Quit", quitText)
+        textRect.center = ((550 + (100/2)), (450+(50/2)))
+        gameDisplay.blit(textSurf, textRect)
+
         pygame.display.update()
         clock.tick(15)
 
