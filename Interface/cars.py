@@ -16,3 +16,12 @@ computer_two = pygame.transform.rotate(computer_two, 90)
 computer_three = pygame.image.load('..\Resources\Cars\\rc_white.png')
 computer_three = pygame.transform.scale(computer_three, (80, 100))
 computer_three = pygame.transform.rotate(computer_three, 90)
+
+topMenu = pygame.image.load('..\Resources\Cars\\rc_orange.png')
+topMenu = pygame.transform.scale(topMenu, (200, 600))
+topMenu = pygame.transform.rotate(topMenu, 90)
+
+
+bottomMenu = pygame.image.load('..\Resources\Cars\\rc_red.png')
+bottomMenu = pygame.transform.scale(bottomMenu, (200, 600))
+bottomMenu = pygame.transform.rotate(bottomMenu, 90)
