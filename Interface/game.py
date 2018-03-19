@@ -119,22 +119,22 @@ def game_start():
             if event.type == pygame.QUIT:
                 raceFinished = True
 
-        if event.type == pygame.KEYDOWN:
-            #if event.key == pygame.K_SPACE:
-            if event.key == answer:
-                player_x_change = randint(1, 20)
-                comp_1_change = randint(1, 20)
-                comp_2_change = randint(1, 20)
-                comp_3_change = randint(1, 20)
+            if event.type == pygame.KEYDOWN:
+                #if event.key == pygame.K_SPACE:
+                if event.key == answer:
+                    player_x_change = randint(1, 20)
+                    comp_1_change = randint(1, 20)
+                    comp_2_change = randint(1, 20)
+                    comp_3_change = randint(1, 20)
 
-            if event.key == pygame.K_LSHIFT:
-                sound.play()
+                if event.key == pygame.K_LSHIFT:
+                    sound.play()
 
-        if event.type == pygame.KEYUP:
-            #if event.key == pygame.K_SPACE:
-            if event.key == answer:
-                player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
-                correct = True
+            if event.type == pygame.KEYUP:
+                #if event.key == pygame.K_SPACE:
+                if event.key == answer:
+                    player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
+                    correct = True
 
         # ADJUST CAR POSITIONS
         player_x += player_x_change
@@ -193,8 +193,8 @@ def game_menu():
     intro = True
 
     while intro:
-        for gameEvent in pygame.event.get():
-            if gameEvent.type == pygame.QUIT:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
 
@@ -215,6 +215,9 @@ def game_menu():
         elif 550+100 > mouse[0] > 550 and 450+50 > mouse[1] > 450:
             pygame.draw.rect(gameDisplay, (250, 0, 0), (550, 450, 100, 50))
             pygame.draw.rect(gameDisplay, (0, 200, 0), (150, 450, 100, 50))
+            if clicked[0] == 1:
+                pygame.quit()
+                quit()
         else:
             pygame.draw.rect(gameDisplay, (0, 200, 0), (150, 450, 100, 50))
             pygame.draw.rect(gameDisplay, (200, 0, 0), (550, 450, 100, 50))
