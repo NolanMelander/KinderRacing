@@ -65,10 +65,10 @@ def sort_pos(p_pos, one_pos, two_pos, three_pos):
 
 
 def display_lap(pc, comp_1, comp_2, comp_3, player_x, comp_one_x, comp_two_x, comp_three_x):
-    gameDisplay.blit(pc, (115, 0))
-    gameDisplay.blit(comp_1, (300, 0))
-    gameDisplay.blit(comp_2, (500, 0))
-    gameDisplay.blit(comp_3, (700, 0))
+    gameDisplay.blit(pc, (700, 0))
+    gameDisplay.blit(comp_1, (500, 0))
+    gameDisplay.blit(comp_2, (300, 0))
+    gameDisplay.blit(comp_3, (115, 0))
 
     player_pos = 575
     comp_one_pos = 375
