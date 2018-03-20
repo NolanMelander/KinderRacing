@@ -6,19 +6,43 @@ display_height = 800
 
 # CAR CLASS
 class Racecar:
-    def __init__(self, picture, lap, x, y):
+    def __init__(self, picture, lap, x, y, pos, lap_pos):
         self.picture = picture
         self.dist_traveled = 0
         self.lap = lap
         self.x = x
         self.y = y
+        self.pos = pos
+        self.lap_pos = lap_pos
 
     def set_lap(self):
         if self.x > display_width:
             self.x = -80
             self.lap += 1
 
+    def set_pos(self, car_one, car_two, car_three):
+        ahead = 0
+        if self.dist_traveled > car_one:
+            ahead += 1
 
+        if self.dist_traveled > car_two:
+            ahead += 1
+
+        if self.dist_traveled > car_three:
+            ahead += 1
+
+        if ahead == 3:
+            self.pos = 575
+            self.lap_pos = 700
+        elif ahead == 2:
+            self.pos = 375
+            self.lap_pos = 500
+        elif ahead == 1:
+            self.pos = 175
+            self.lap_pos = 300
+        else:
+            self.pos = 0
+            self.lap_pos = 115
 
 
 # PLAYER CAR
