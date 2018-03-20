@@ -60,24 +60,22 @@ def lap_tracker(lap):
     return image
 
 
-def sort_pos(p_pos, one_pos, two_pos, three_pos):
-    return 575, 375, 175, 0
+def display_lap(pc, comp_1, comp_2, comp_3, car_one, car_two, car_three, car_four):
+    gameDisplay.blit(pc, (car_one.lap_pos, 0))
+    gameDisplay.blit(comp_1, (car_two.lap_pos, 0))
+    gameDisplay.blit(comp_2, (car_three.lap_pos, 0))
+    gameDisplay.blit(comp_3, (car_four.lap_pos, 0))
 
-
-def display_lap(pc, comp_1, comp_2, comp_3, player_x, comp_one_x, comp_two_x, comp_three_x):
-    gameDisplay.blit(pc, (700, 0))
-    gameDisplay.blit(comp_1, (500, 0))
-    gameDisplay.blit(comp_2, (300, 0))
-    gameDisplay.blit(comp_3, (115, 0))
-
-
-    player_pos, comp_one_pos, comp_two_pos, comp_three_pos = sort_pos(player_x, comp_one_x, comp_two_x, comp_three_x)
+    car_one.set_pos(car_two.dist_traveled, car_three.dist_traveled, car_four.dist_traveled)
+    car_two.set_pos(car_one.dist_traveled, car_three.dist_traveled, car_four.dist_traveled)
+    car_three.set_pos(car_one.dist_traveled, car_two.dist_traveled, car_four.dist_traveled)
+    car_four.set_pos(car_one.dist_traveled, car_two.dist_traveled, car_three.dist_traveled)
 
     # REPOSITION PLAYERS
-    player_car(player_pos, 0)
-    computer_one_car(comp_one_pos, 0)
-    computer_two_car(comp_two_pos, 0)
-    computer_three_car(comp_three_pos, 0)
+    player_car(car_one.pos, 0)
+    computer_one_car(car_two.pos, 0)
+    computer_two_car(car_three.pos, 0)
+    computer_three_car(car_four.pos, 0)
     pass
 
 
@@ -91,10 +89,10 @@ def question_display(choice_1, choice_2, choice_3, choice_4):
 def game_start():
 
     #CAR OBJECTS
-    car_one = cars.Racecar(cars.player, 1, 0, 150)
-    car_two = cars.Racecar(cars.computer_one, 1, 0, 250)
-    car_three = cars.Racecar(cars.computer_two, 1, 0, 350)
-    car_four = cars.Racecar(cars.computer_three, 1, 0, 450)
+    car_one = cars.Racecar(cars.player, 1, 0, 150, 575, 700)
+    car_two = cars.Racecar(cars.computer_one, 1, 0, 250, 375, 500)
+    car_three = cars.Racecar(cars.computer_two, 1, 0, 350, 175, 300)
+    car_four = cars.Racecar(cars.computer_three, 1, 0, 450, 0, 115)
 
     # CARS SETUP
     player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
@@ -133,6 +131,11 @@ def game_start():
         car_three.x += comp_2_change
         car_four.x += comp_3_change
 
+        car_one.dist_traveled += player_x_change
+        car_two.dist_traveled += comp_1_change
+        car_three.dist_traveled += comp_2_change
+        car_four.dist_traveled += comp_3_change
+
         # PREPARE DISPLAY
 
         gameDisplay.blit(background, (0, 95, display_width, display_height))
@@ -141,8 +144,7 @@ def game_start():
         comp_2_lapImg = lap_tracker(car_three.lap)
         comp_3_lapImg = lap_tracker(car_four.lap)
 
-        display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg, car_one.x, car_two.x, car_three.x,
-                    car_four.x)
+        display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg, car_one, car_two, car_three, car_four)
         question_display(option_1, option_2, option_3, option_4)
         player_car(car_one.x, car_one.y)
         computer_one_car(car_two.x, car_two.y)
