@@ -109,7 +109,6 @@ def game_start():
                 raceFinished = True
 
             if event.type == pygame.KEYDOWN:
-                #if event.key == pygame.K_SPACE:
                 if event.key == answer:
                     player_x_change = randint(1, 20)
                     comp_1_change = randint(1, 20)
@@ -120,9 +119,7 @@ def game_start():
                     sound.play()
 
             if event.type == pygame.KEYUP:
-                #if event.key == pygame.K_SPACE:
                 if event.key == answer:
-                    gameDisplay.fill((0, 0, 0))
                     player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
                     correct = True
 
@@ -137,7 +134,7 @@ def game_start():
         car_four.dist_traveled += comp_3_change
 
         # PREPARE DISPLAY
-
+        gameDisplay.fill((0, 0, 0))
         gameDisplay.blit(background, (0, 95, display_width, display_height))
         player_lapImg = lap_tracker(car_one.lap)
         comp_1_lapImg = lap_tracker(car_two.lap)
