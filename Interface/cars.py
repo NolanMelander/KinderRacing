@@ -1,5 +1,26 @@
 import pygame
 
+display_width = 800
+display_height = 800
+
+
+# CAR CLASS
+class Racecar:
+    def __init__(self, picture, lap, x, y):
+        self.picture = picture
+        self.dist_traveled = 0
+        self.lap = lap
+        self.x = x
+        self.y = y
+
+    def set_lap(self):
+        if self.x > display_width:
+            self.x = -80
+            self.lap += 1
+
+
+
+
 # PLAYER CAR
 player = pygame.image.load('..\Resources\Cars\\rc_orange.png')
 player = pygame.transform.scale(player, (80, 100))
