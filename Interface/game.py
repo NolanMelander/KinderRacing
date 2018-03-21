@@ -98,8 +98,9 @@ def game_start():
     player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
 
     # QUESTION SETUP
-    option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
-    sound.play()
+    #option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+    currentQuestion = questions.QuestionLetter()
+    currentQuestion.sound.play()
     correct = False
     raceFinished = False
 
@@ -109,17 +110,17 @@ def game_start():
                 raceFinished = True
 
             if event.type == pygame.KEYDOWN:
-                if event.key == answer:
+                if event.key == currentQuestion.key:
                     player_x_change = randint(1, 20)
                     comp_1_change = randint(1, 20)
                     comp_2_change = randint(1, 20)
                     comp_3_change = randint(1, 20)
 
                 if event.key == pygame.K_LSHIFT:
-                    sound.play()
+                    currentQuestion.sound.play()
 
             if event.type == pygame.KEYUP:
-                if event.key == answer:
+                if event.key == currentQuestion.key:
                     player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
                     correct = True
 
@@ -140,9 +141,14 @@ def game_start():
         comp_1_lapImg = lap_tracker(car_two.lap)
         comp_2_lapImg = lap_tracker(car_three.lap)
         comp_3_lapImg = lap_tracker(car_four.lap)
-
         display_lap(player_lapImg, comp_1_lapImg, comp_2_lapImg, comp_3_lapImg, car_one, car_two, car_three, car_four)
-        question_display(option_1, option_2, option_3, option_4)
+        displayQuestion = False
+        while not displayQuestion:
+            if currentQuestion.ready:
+                question_display(currentQuestion.letter_one, currentQuestion.letter_two, currentQuestion.letter_three,
+                                 currentQuestion.letter_four)
+                displayQuestion = True
+
         player_car(car_one.x, car_one.y)
         computer_one_car(car_two.x, car_two.y)
         computer_two_car(car_three.x, car_three.y)
@@ -153,9 +159,10 @@ def game_start():
         clock.tick(60)
 
         if correct:
-            option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+            #option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
+            currentQuestion = questions.QuestionLetter()
             engine.play(maxtime=3000)
-            sound.play()
+            currentQuestion.sound.play()
             correct = False
 
         car_one.set_lap()

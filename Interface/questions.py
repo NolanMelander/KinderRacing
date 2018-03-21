@@ -7,6 +7,7 @@ class QuestionLetter:
     def __init__(self):
         self.letter_one = self.letter_two = self.letter_three = self.letter_four = self.key = self.sound = 0
         self.letter_image_one = self.letter_image_two = self.letter_image_three = self.letter_image_four = 0
+        self.ready = False
         self.create_question()
         self.set_answer()
 
@@ -386,7 +387,7 @@ class QuestionLetter:
             self.key = pygame.K_z
 
         self.set_image()
-
+        self.ready = True
 
 def new_question():
     question = randint(1, 26)
