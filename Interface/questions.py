@@ -2,6 +2,36 @@ import pygame
 import Interface.letters as letters
 from random import randint
 
+
+def set_question():
+
+    letter_one = randint(0, 26)
+
+    letter_two = randint(0, 26)
+
+    while letter_two == letter_one:
+        letter_two = randint(0, 26)
+
+    letter_three = randint(0, 26)
+
+    while letter_three == letter_one or letter_three == letter_two:
+        letter_three = randint(0, 26)
+
+    letter_four = randint(0, 26)
+
+    while letter_four == letter_one or letter_four == letter_two or letter_four == letter_three:
+        letter_four = randint(0, 26)
+
+    return letter_one, letter_two, letter_three, letter_four
+
+def set_sound():
+    pass
+
+
+def set_answer():
+    pass
+
+
 def new_question():
     question = randint(1, 26)
     if question == 1:
