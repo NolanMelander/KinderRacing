@@ -98,7 +98,6 @@ def game_start():
     player_x_change = comp_1_change = comp_2_change = comp_3_change = 0
 
     # QUESTION SETUP
-    #option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
     currentQuestion = questions.QuestionLetter()
     currentQuestion.sound.play()
     correct = False
@@ -159,7 +158,6 @@ def game_start():
         clock.tick(60)
 
         if correct:
-            #option_1, option_2, option_3, option_4, answer, sound = questions.new_question()
             currentQuestion = questions.QuestionLetter()
             engine.play(maxtime=3000)
             currentQuestion.sound.play()
