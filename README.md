@@ -11,6 +11,9 @@ Kinder Racing is a simple game to help children in preschool and kindergarten to
 * New Question Algorithm increase questions from 26 to 15,600
 * Minor Bug Fixes
 
+## Known Bugs
+* Holding down the key of a correct answer allows vehicles to move until the key is released
+
 ## Future Features
 
 These features are planned for a future version
