@@ -1,4 +1,7 @@
 import pygame
+import configparser
+config = configparser.ConfigParser()
+config.read("../ConfigFiles/letters.ini")
 
 
 # LETTERS
