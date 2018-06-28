@@ -24,7 +24,7 @@ These features are planned for a future version
 * Adding your own voice to each letter
 * Randomizing race car colors
 
-##Game Images
+## Game Images
 
 #### Main Menu
 ![v 0.9.1](Resources/Examples/MainMenu.png)
