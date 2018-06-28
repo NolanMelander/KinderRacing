@@ -25,6 +25,7 @@ These features are planned for a future version
 * Randomizing race car colors
 
 ##Game Images
+
 #### Main Menu
 ![v 0.9.1](Resources/Examples/MainMenu.png)
 #### Game Play
